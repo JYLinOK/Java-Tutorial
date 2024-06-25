@@ -1,6 +1,5 @@
 # Java编程7 - Java的变量类型
 
-
 lin-jinwei
 
 注意，未授权不得擅自以盈利方式转载本博客任何文章。
@@ -12,7 +11,6 @@ Code: code/J4-variables-types
 ## 变量类型
 
 本部分主要学习Java的各种不同作用域类型的变量类型的作用范围及其特点。
-
 
 # 局部变量与全局变量
 
@@ -76,17 +74,37 @@ Process finished with exit code 0
 3. 每一个实例变量都有自己的副本。
 4. 在定义的时候如果没有初始化，实例变量将被赋值默认值。
 
+```java
+public class Main {
+    // 类的内部，方法的外部定义的变量成为实例变量
+    // 实例变量如果不加 static, 即不转静态则无法被静态函数调用
+    static int a = 1;
+    static float b = 1;
+    static double c = 2.3d;
+    static long d = 123456789;
 
+    public static void main(String[] args) {
+        System.out.println("实例变量");
 
+        // 主函数直接调用实例变量
+        System.out.println("实例变量 a = " +  a);
+        System.out.println("实例变量 a = " +  b);
+        System.out.println("实例变量 a = " +  a);
+        System.out.println("实例变量 a = " +  a);
+        System.out.println("实例变量 a = " +  a);
+    }
+}
+```
 
+out:
 
+```java
+实例变量
+实例变量 a = 1
+实例变量 a = 1.0
+实例变量 a = 1
+实例变量 a = 1
+实例变量 a = 1
 
-
-
-
-
-
-
-
-
+Process finished with exit code 0
 ```
