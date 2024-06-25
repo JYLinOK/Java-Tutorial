@@ -71,11 +71,10 @@ Process finished with exit code 0
 
 Code: code/J5-instance-variable
 
-
 1. Java中的实例变量就是在类中但不在函数方法内中定义的变量。
-3. 实例变量属于类的实例。
-4. 每一个实例变量都有自己的副本。
-5. 在定义的时候如果没有初始化，实例变量将被赋值默认值。
+2. 实例变量属于类的实例。
+3. 每一个实例变量都有自己的副本。
+4. 在定义的时候如果没有初始化，实例变量将被赋值默认值。
 
 ```java
 public class Main {
@@ -108,6 +107,115 @@ out:
 实例变量 a = 1
 实例变量 a = 1
 实例变量 a = 1
+
+Process finished with exit code 0
+```
+
+---
+
+## 静态变量（也称类变量）
+
+Code: code/J6-static-variable
+
+总结：
+
+1. 静态变量是指使用 static 关键字，在类的内部定义的变量。
+2. 静态变量属于类而不属于实例。
+3. 一个类可以有多个实例，在初始化类的时候，同一个类的同一静态变量都是相同的。
+4. 类的静态变量可以看作是类的成员变量。
+
+实例：
+
+这里，我们用到了类与对象，定义了两个类：
+
+主类：
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("静态变量");
+
+        // 初始化第三方类
+        System.out.println("初始化第三方类");
+        StaticC staticC = new StaticC();
+
+        System.out.println("输出第三方类的静态变量");
+        System.out.println("s_int = " + staticC.s_int);
+        System.out.println("s_float = " + staticC.s_float);
+        System.out.println("s_long = " + staticC.s_long);
+    }
+}
+```
+
+子类：
+
+```java
+public class StaticC {
+    // 定义第三方类的静态变量
+    // 在类的内部定义静态变量
+    int s_int = 1;
+    float s_float = 2.3f;
+    long s_long = 123456789;
+
+}
+
+```
+
+输出：
+
+```java
+初始化第三方类
+输出第三方类的静态变量
+s_int = 1
+s_float = 2.3
+s_long = 123456789
+
+Process finished with exit code 0
+```
+
+---
+
+## 参数变量（也称方法变量）
+
+Code: code/J7-parameter-variable
+
+总结：
+
+1. 参数变量在定义方法的时候在方法名称后面括号中定义。
+2. 参数变量的作用域只是在所定义的方法的内部。
+
+实例：
+
+```java
+public class Main {
+    // 定义类变量
+    static int a = 123;
+
+    // 在主类中定义其他方法
+    // 下面的变量b就是参数变量
+    // 由于主类的主方法main()是静态的，因此想要在主方法main()中调用同一类中的子方法，类的子方法需要定义为static静态。
+    public static void aMethod(int b){
+        System.out.println("a = " + a);
+        System.out.println("a + b = " + (a + b));
+    }
+
+    public static void main(String[] args) {
+        System.out.println("参数变量");
+
+        int b = 5;
+        System.out.println("main方法中， b = " + b);
+        aMethod(b);
+    }
+}
+```
+
+输出：
+
+```java
+参数变量
+main方法中， b = 5
+a = 123
+a + b = 128
 
 Process finished with exit code 0
 ```

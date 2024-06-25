@@ -11,9 +11,8 @@ public class Main {
 
         // 主函数直接调用实例变量
         System.out.println("实例变量 a = " +  a);
-        System.out.println("实例变量 a = " +  b);
-        System.out.println("实例变量 a = " +  a);
-        System.out.println("实例变量 a = " +  a);
-        System.out.println("实例变量 a = " +  a);
+        System.out.println("实例变量 b = " +  b);
+        System.out.println("实例变量 c = " +  c);
+        System.out.println("实例变量 d = " +  d);
     }
 }
