@@ -6,7 +6,7 @@ lin-jinwei
 
 ---
 
-Code: code/J8-data-structure
+J8-data-structure-arrayCode: code/J8-data-structure
 
 ## 数据结构有什么用？
 
