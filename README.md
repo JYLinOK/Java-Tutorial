@@ -20,9 +20,9 @@
 
 ### Doc
 
-##### [Java编程1-Java编程入门](doc\Java编程1-Java编程入门.md)
+##### [Java编程1-Java编程入门](doc/Java编程1-Java编程入门.md)
 
-##### [Java编程2-Jave代码运行流程](doc\Java编程2-Jave代码运行流程.md)
+##### [Java编程2-Jave代码运行流程](doc/Java编程2-Jave代码运行流程.md)
 
 ##### [Java编程3-Java代码的运行流程](doc\Java编程3-Java代码的运行流程.md)
 
